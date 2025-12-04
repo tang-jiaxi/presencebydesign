@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useBrush, Artboard } from '@/lib/react-artboard'
+import { useBrush, Artboard } from '@/lib/react-artboard/dist/index.module.js'
 import { supabase } from '@/lib/supabase/client'
 
 export default function Input() {
