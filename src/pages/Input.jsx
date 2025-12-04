@@ -112,7 +112,7 @@ export default function Input() {
         ref={wrapperRef}
         className="w-full"
         style={{
-          height: 'calc(100vh * 189 / 187)',
+          height: 'calc(87vw * 189 / 187)',
         }}
       >
         <Artboard
