@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useBrush, Artboard } from 'react-artboard'
+import { useBrush, Artboard } from '@/lib/react-artboard'
 import { supabase } from '@/lib/supabase/client'
 
 export default function Input() {
@@ -77,7 +77,7 @@ export default function Input() {
         Watch the big screen on the right.
         <br /> The screen will refresh, <br /> and a lantern with your wish will appear.
       </p>
-      <div className="flex max-w-[90vh] justify-between pt-4">
+      <div className="flex max-w-[87vw] justify-between pt-4">
         <div className="flex gap-4">
           <input type="color" value={color} onInput={(e) => setColor(e.target.value)} />
 
@@ -120,8 +120,8 @@ export default function Input() {
           tool={brush}
           className="border border-black"
           style={{
-            width: '90vh',
-            height: 'calc(90vh * 189 / 187)',
+            width: '87vw',
+            height: 'calc(87vw * 189 / 187)',
           }}
         />
       </div>

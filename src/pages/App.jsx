@@ -104,7 +104,7 @@ export default function App() {
     const texture = useTexture('/hdr/cropped.jpg')
     return (
       <>
-        <mesh position={[0, 0, -10]} scale={[9.5, 13, 1]}>
+        <mesh position={[-0.01, 0, -10]} scale={[6, 10, 1]}>
           <planeGeometry args={[1, 1]} />
           <meshBasicMaterial map={texture} depthWrite={false} toneMapped={false} />
         </mesh>
@@ -158,19 +158,20 @@ export default function App() {
   return (
     <main className="h-screen w-screen overflow-hidden">
       {/* <div className="mx-auto h-screen w-[calc(100vh*82/144)] border-black bg-none"></div> */}
-      <Suspense fallback={<Spinner />}>
-        <Canvas
-          className="overflow-hidden"
-          gl={{ alpha: true }}
-          style={{ background: 'transparent' }}
-          camera={{
-            fov: INITIAL_CAMERA.fov,
-            near: INITIAL_CAMERA.near,
-            far: INITIAL_CAMERA.far,
-            position: INITIAL_CAMERA.position,
-            rotation: INITIAL_CAMERA.rotation,
-          }}
-        >
+      <Canvas
+        className="overflow-hidden"
+        gl={{ alpha: true }}
+        style={{ background: 'transparent' }}
+        camera={{
+          fov: INITIAL_CAMERA.fov,
+          near: INITIAL_CAMERA.near,
+          far: INITIAL_CAMERA.far,
+          position: INITIAL_CAMERA.position,
+          rotation: INITIAL_CAMERA.rotation,
+        }}
+      >
+        {' '}
+        <Suspense fallback={<Spinner />}>
           {/* <Environment files="/hdr/citrus_orchard_road_puresky_4k.exr" background={false} /> */}
           <Background />
           <Clouds material={THREE.MeshBasicMaterial}>
@@ -215,8 +216,8 @@ export default function App() {
               </mesh>
             </RigidBody>
           </Physics>
-        </Canvas>
-      </Suspense>
+        </Suspense>
+      </Canvas>
     </main>
   )
 }
