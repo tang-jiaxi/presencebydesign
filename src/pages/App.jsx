@@ -5,7 +5,7 @@ import WaterSurface from '@/components/Water'
 import '../index.css'
 import WaterLantern from '../components/models/WaterLantern'
 import { supabase } from '@/lib/supabase/client'
-import { OrbitControls, Environment, useTexture, Clouds, Cloud } from '@react-three/drei'
+import { OrbitControls, Environment, useTexture, Clouds, Cloud, Html } from '@react-three/drei'
 import { Physics, RigidBody, useRapier } from '@react-three/rapier'
 import { wrap } from '@/utils/wrap'
 import { rand } from '@/utils/random'
@@ -146,18 +146,19 @@ export default function App() {
 
   function Spinner() {
     return (
-      <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-16 bg-amber-50">
-        <div className="h-40 w-40 animate-spin rounded-full border-20 border-gray-800 border-b-gray-400"></div>
-        <p className="font-[palatino-linotype] text-4xl font-bold text-[#db452c]">
-          Releasing your lanterns...
-        </p>
-      </div>
+      <Html>
+        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-16 bg-amber-50">
+          <div className="h-40 w-40 animate-spin rounded-full border-20 border-gray-800"></div>
+          <p className="font-[palatino-linotype] text-4xl font-bold text-[#db452c]">
+            Releasing your lanterns...
+          </p>
+        </div>
+      </Html>
     )
   }
 
   return (
     <main className="h-screen w-screen overflow-hidden">
-      {/* <div className="mx-auto h-screen w-[calc(100vh*82/144)] border-black bg-none"></div> */}
       <Canvas
         className="overflow-hidden"
         gl={{ alpha: true }}
@@ -170,7 +171,6 @@ export default function App() {
           rotation: INITIAL_CAMERA.rotation,
         }}
       >
-        {' '}
         <Suspense fallback={<Spinner />}>
           {/* <Environment files="/hdr/citrus_orchard_road_puresky_4k.exr" background={false} /> */}
           <Background />
