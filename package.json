@@ -10,14 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.19.3",
     "@react-three/drei": "10.0",
     "@react-three/fiber": "9.1",
-    "@react-three/rapier": "2.0",
+    "@react-three/rapier": "~2.0.1",
     "@supabase/supabase-js": "^2.83.0",
     "@tailwindcss/vite": "^4.1.17",
     "leva": "0.10",
     "react": "^19.2.0",
-    "react-artboard": "^0.1.1",
+    "react-artboard": "link:react-artboard",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
     "supabase": "^2.58.5",

@@ -25,9 +25,13 @@ export default function WaterSurface() {
       normalMap1: new THREE.TextureLoader().load('/textures/water/Water_2_M_Normal.jpg'),
     })
 
-    water.rotation.x = -Math.PI / 3
-    water.rotation.z = Math.PI / 7
+    water.rotation.x = -Math.PI / 2
     water.position.y = 0
+
+    water.receiveShadow = false
+    water.castShadow = false
+    water.material.transparent = true
+    water.material.depthWrite = false
 
     scene.add(water)
     waterRef.current = water
