@@ -1,0 +1,60 @@
+{
+  "name": "react-artboard",
+  "version": "0.1.1",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.module.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.module.js",
+      "require": "./dist/index.umd.js",
+      "default": "./dist/index.modern.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Matt Kane <m@mk.gg>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel example/index.html --host 0.0.0.0 --out-dir public",
+    "build:example": "parcel build example/index.html --out-dir public",
+    "build:library": "microbundle --jsx React.createElement src/index.ts"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/preset-react": "^7.13.13",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.3",
+    "@types/tinycolor2": "^1.4.2",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "microbundle": "^0.13.0",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-colorful": "^4.4.4",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-rangeslider": "^2.2.0",
+    "react-responsive-modal": "^6.0.1",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "dependencies": {
+    "tinycolor2": "^1.4.2"
+  },
+  "description": "A realistic paint component",
+  "repository": "git@github.com:ascorbic/react-artboard.git",
+  "homepage": "https://github.com/ascorbic/react-artboard"
+}
