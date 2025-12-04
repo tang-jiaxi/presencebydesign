@@ -21,7 +21,6 @@
     "react-artboard": "link:react-artboard",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
-    "supabase": "^2.58.5",
     "three": "0.174"
   },
   "devDependencies": {
