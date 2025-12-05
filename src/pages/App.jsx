@@ -18,7 +18,7 @@ export default function App() {
   const controlsRef = useRef()
   const [lanterns, setLanterns] = useState([])
   const INITIAL_CAMERA = {
-    position: [0, 0.5, 6],
+    position: [0, 0.5, 11],
     target: [0, 0, 0],
     fov: 35,
     near: 0.1,
@@ -104,7 +104,7 @@ export default function App() {
     const texture = useTexture('/hdr/cropped.jpg')
     return (
       <>
-        <mesh position={[-0.01, 0, -10]} scale={[6, 10, 1]}>
+        <mesh position={[-0.01, 0, -10]} scale={[8, 13, 1]}>
           <planeGeometry args={[1, 1]} />
           <meshBasicMaterial map={texture} depthWrite={false} toneMapped={false} />
         </mesh>
@@ -149,7 +149,7 @@ export default function App() {
       <Html>
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-16 bg-amber-50">
           <div className="h-40 w-40 animate-spin rounded-full border-20 border-gray-800"></div>
-          <p className="font-[palatino-linotype] text-4xl font-bold text-[#db452c]">
+          <p className="text-center font-[palatino-linotype] text-4xl font-bold text-[#db452c]">
             Releasing your lanterns...
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function App() {
   }
 
   return (
-    <main className="h-screen w-screen overflow-hidden">
+    <main className="2-xl:rotate-90 h-screen w-screen overflow-hidden">
       <Canvas
         className="overflow-hidden"
         gl={{ alpha: true }}
