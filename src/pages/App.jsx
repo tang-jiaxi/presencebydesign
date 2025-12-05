@@ -23,7 +23,7 @@ export default function App() {
     fov: 35,
     near: 0.1,
     far: 50,
-    rotation: [0, 0, 0],
+    // rotation: [0, 0, 0],
   }
 
   useEffect(() => {
@@ -158,17 +158,18 @@ export default function App() {
   }
 
   return (
-    <main className="h-screen w-screen rotate-90 overflow-hidden">
+    <main className="h-screen w-screen overflow-hidden">
       <Canvas
-        className="overflow-hidden"
+        className="mx-auto overflow-hidden"
         gl={{ alpha: true }}
-        style={{ background: 'transparent' }}
+        style={{ background: 'transparent', width: '100%', height: '100%', display: 'block' }}
         camera={{
           fov: INITIAL_CAMERA.fov,
           near: INITIAL_CAMERA.near,
           far: INITIAL_CAMERA.far,
           position: INITIAL_CAMERA.position,
           rotation: INITIAL_CAMERA.rotation,
+          up: [-1, 0, 0],
         }}
       >
         <Suspense fallback={<Spinner />}>
@@ -178,7 +179,7 @@ export default function App() {
             <MovingCloudBand />
           </Clouds>
           <Physics gravity={[0, 0, 0]}>
-            <OrbitControls ref={controlsRef} enablePan={false} />
+            {/* <OrbitControls ref={controlsRef} enablePan={false} /> */}
             <directionalLight position={[0, 0, 6]} intensity={2} />
             <ambientLight intensity={1} color="#ffffff" />
 
