@@ -18,7 +18,7 @@ export default function App() {
   const controlsRef = useRef()
   const [lanterns, setLanterns] = useState([])
   const INITIAL_CAMERA = {
-    position: [0, 0.5, 11],
+    position: [0, 0.5, 6],
     target: [0, 0, 0],
     fov: 35,
     near: 0.1,
@@ -169,7 +169,7 @@ export default function App() {
           far: INITIAL_CAMERA.far,
           position: INITIAL_CAMERA.position,
           rotation: INITIAL_CAMERA.rotation,
-          up: [-1, 0, 0],
+          up: [1, 0, 0],
         }}
       >
         <Suspense fallback={<Spinner />}>
