@@ -18,7 +18,7 @@ export default function App() {
   const controlsRef = useRef()
   const [lanterns, setLanterns] = useState([])
   const INITIAL_CAMERA = {
-    position: [0, 0.5, 6],
+    position: [0, 0.6, 2.7],
     target: [0, 0, 0],
     fov: 35,
     near: 0.1,
