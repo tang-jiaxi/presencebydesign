@@ -158,7 +158,7 @@ export default function App() {
   }
 
   return (
-    <main className="2-xl:rotate-90 h-screen w-screen overflow-hidden">
+    <main className="h-screen w-screen rotate-90 overflow-hidden">
       <Canvas
         className="overflow-hidden"
         gl={{ alpha: true }}
