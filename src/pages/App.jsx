@@ -18,7 +18,7 @@ export default function App() {
   const controlsRef = useRef()
   const [lanterns, setLanterns] = useState([])
   const INITIAL_CAMERA = {
-    position: [0, 0.6, 2.7],
+    position: [0, 0.6, 6],
     target: [0, 0, 0],
     fov: 35,
     near: 0.1,
@@ -32,7 +32,7 @@ export default function App() {
         .from('images')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(10)
+        .limit(30)
       if (!error) setLanterns(data)
     }
     loadImages()
@@ -44,7 +44,7 @@ export default function App() {
         // setLanterns((prev) => [...prev, newImage])
         setLanterns((prev) => {
           const updated = [newImage, ...prev]
-          return updated.slice(0, 10)
+          return updated.slice(0, 30)
         })
       })
       .subscribe()
@@ -104,7 +104,7 @@ export default function App() {
     const texture = useTexture('/hdr/cropped.jpg')
     return (
       <>
-        <mesh position={[-0.01, 0, -10]} scale={[8, 13, 1]}>
+        <mesh position={[-0.01, 0, -10]} scale={[11, 16.5, 1]}>
           <planeGeometry args={[1, 1]} />
           <meshBasicMaterial map={texture} depthWrite={false} toneMapped={false} />
         </mesh>
