@@ -32,7 +32,7 @@ export default function App() {
         .from('images')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(30)
+        .limit(10)
       if (!error) setLanterns(data)
     }
     loadImages()
@@ -44,7 +44,7 @@ export default function App() {
         // setLanterns((prev) => [...prev, newImage])
         setLanterns((prev) => {
           const updated = [newImage, ...prev]
-          return updated.slice(0, 30)
+          return updated.slice(0, 10)
         })
       })
       .subscribe()
@@ -104,7 +104,7 @@ export default function App() {
     const texture = useTexture('/hdr/cropped.jpg')
     return (
       <>
-        <mesh position={[-0.01, 0, -10]} scale={[11, 16.5, 1]}>
+        <mesh position={[-0.01, 0, -10]} scale={[18, 23, 1]}>
           <planeGeometry args={[1, 1]} />
           <meshBasicMaterial map={texture} depthWrite={false} toneMapped={false} />
         </mesh>
@@ -146,7 +146,7 @@ export default function App() {
 
   function Spinner() {
     return (
-      <Html>
+      <Html className="bg-amber-50">
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-16 bg-amber-50">
           <div className="h-40 w-40 animate-spin rounded-full border-20 border-gray-800"></div>
           <p className="text-center font-[palatino-linotype] text-4xl font-bold text-[#db452c]">
@@ -179,7 +179,7 @@ export default function App() {
             <MovingCloudBand />
           </Clouds>
           <Physics gravity={[0, 0, 0]}>
-            {/* <OrbitControls ref={controlsRef} enablePan={false} /> */}
+            <OrbitControls ref={controlsRef} enablePan={false} />
             <directionalLight position={[0, 0, 6]} intensity={2} />
             <ambientLight intensity={1} color="#ffffff" />
 
@@ -193,13 +193,13 @@ export default function App() {
             {lanterns?.map((img, i) => {
               const isNewest = i === 0
               const spawnX = isNewest ? -0.1 : rand(-2, 1)
-              const spawnZ = isNewest ? 1.8 : rand(1.2, 2)
+              const spawnZ = isNewest ? 1.8 : rand(2, 2)
 
               return (
                 <WaterLantern
                   key={img.id}
                   image={img.image_url}
-                  position={[spawnX, 0.0178, spawnZ]}
+                  position={[spawnX, 0.0183, spawnZ]}
                 />
               )
             })}
