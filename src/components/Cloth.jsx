@@ -8,7 +8,7 @@ export default function Cloth({ width = 1, height = 2, segments = 20, image = 'l
 
   // Geometry: a vertical waving flag / cloth
   const geometry = new THREE.PlaneGeometry(width, height, segments, segments)
-  const texture = useTexture(`/textures/cloth/${image}.jpg`)
+  const texture = useTexture(`/textures/cloth/${image}.png`)
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
